@@ -9,14 +9,12 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f9f9f9;
-      
-
     }
     .container {
+      text-align: center; /* Centraliza o conteúdo no eixo horizontal */
       padding: 20px;
     }
     h1 {
-      text-align: center;
       color: #333;
     }
     .menu-item {
@@ -54,11 +52,9 @@
       font-weight: bold;
       color: #2c7a7b;
     }
-
     img {
-      position: relative; /* Permite mover a imagem manualmente */
-      left: 150px; /* Move para a direita (+200px no eixo X) */
-      top: 0px; /* Move para baixo (+50px no eixo Y) */
+      display: block; /* Garante que a imagem seja tratada como um bloco */
+      margin: 0 auto; /* Centraliza horizontalmente */
     }
     .line {
       display: inline-block; /* Mantém a largura da linha no tamanho do conteúdo */
@@ -66,13 +62,12 @@
       padding-bottom: 5px; /* Espaço entre o texto e a linha */
     }
   </style>
-</head>
-<body>
-  <div class="container">
-    <img src="logot.png" alt="Descrição da imagem" width="300" >
-    <h1>Cardápio</h1>
-    <h1><span class="line">Fogazzas Salgadas</span></h1>
-
+  </head>
+  <body>
+    <div class="container">
+      <img src="logot.png" alt="Descrição da imagem" width="300">
+      <h1>Cardápio</h1>
+      <h1><span class="line">Fogazzas Salgadas</span></h1>
     <div class="menu-item"> 
       <div class="details">
         <h3>Muçarela</h3>
