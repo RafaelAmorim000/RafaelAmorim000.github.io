@@ -27,7 +27,10 @@
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       cursor: pointer;
+      transition: all 0.3s ease-in-out;
       position: relative;
+      overflow: hidden; /* Para evitar que a imagem ultrapasse o card */
+      height: 80px; /* Altura inicial do card */
     }
     .menu-item .details {
       flex: 1;
@@ -48,33 +51,25 @@
       font-weight: bold;
       color: #2c7a7b;
     }
-    .hidden-image {
-      display: none;
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
+    .menu-item img {
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal img {
-      max-width: 90%;
-      max-height: 90%;
+      object-fit: cover;
+      display: none; /* A imagem começa oculta */
+      position: absolute;
+      top: 0;
+      left: 0;
       border-radius: 10px;
     }
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
+    .menu-item.expanded {
+      height: 200px; /* Aumenta o tamanho do card quando expandido */
+    }
+    .menu-item.expanded img {
+      display: block; /* Exibe a imagem quando expandido */
+    }
+    .menu-item.expanded .details, 
+    .menu-item.expanded .price {
+      display: none; /* Esconde os detalhes e preço quando expandido */
     }
   </style>
 </head>
@@ -86,29 +81,19 @@
     <h1><span class="line">Fogazzas Salgadas</span></h1>
   </div>
 
-  <div class="menu-item" onclick="openModal('mucarela.jpg')"> 
+  <div class="menu-item" onclick="toggleItem(this)"> 
     <div class="details">
       <h3>Muçarela</h3>
-      <p>muçarela, tomate e orégano.</p>
+      <p>Muçarela, tomate e orégano.</p>
+      <p>Clique para ver a imagem da Fogazza</p>
     </div>
     <span class="price">R$ 19,00</span>
-    <img class="hidden-image" src="mucarela.jpg" alt="Muçarela">
-  </div>
-
-    <!-- Modal para exibir a imagem -->
-  <div id="modal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img id="modal-image">
+    <img src="mucarela.jpg" alt="Muçarela">
   </div>
 
   <script>
-    function openModal(src) {
-      document.getElementById("modal-image").src = src;
-      document.getElementById("modal").style.display = "flex";
-    }
-
-    function closeModal() {
-      document.getElementById("modal").style.display = "none";
+    function toggleItem(element) {
+      element.classList.toggle("expanded");
     }
   </script>
 
