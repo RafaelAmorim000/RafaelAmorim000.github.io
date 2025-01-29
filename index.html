@@ -123,19 +123,51 @@
     text-align: center;
     z-index: 1000; /* Garante que fique acima de outros elementos */
 }
-        .menu a {
+.menu a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
             font-size: 18px;
         }
-        .menu a:hover {
+.menu a:hover {
             text-decoration: underline;
         }
-        .section {
+.section {
             padding: 100px 20px;
             margin-top: 50px;
         }
+
+
+.description {
+  font-size: 16px;
+  color: #333;
+  background: #ffe6e6;
+  padding: 10px;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.highlight {
+  font-weight: bold;
+  color: #b22222;
+}
+
+.price {
+  font-weight: bold;
+  color: #2c7a7b;
+  background: #fff;
+  padding: 3px 8px;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+.note {
+  font-size: 14px;
+  font-style: italic;
+  color: #555;
+  margin-top: 5px;
+}
   </style>
 </head>
 <body>
@@ -155,8 +187,13 @@
   
   <div class="title-container" class="section" id="fogazzas-salgadas"> 
   <h1><span class="line">Fogazzas Salgadas</span></h1>
-  <p>Acrecimos de catupiry ou chedar acrecentasse <span class="price">R$ 3,00</span>  </p>
-  
+  <p class="description">
+    <span class="highlight">Adicionais:</span> Catupiry ou Cheddar 
+    <span class="price">+ R$ 3,00</span>  
+  </p>
+  <p class="note">
+    * Escolha seu recheio favorito e aproveite o sabor irresistível!
+  </p>
   </div>
 
   <div class="menu-item" onclick="toggleItem(this)"> 
@@ -323,7 +360,12 @@
   </div>
   <div class="title-container" class="section" id="fogazzas-doces">
   <h1><span class="line">Fogazzas Doces</span></h1>
-  <p>pode pedir para acrecentar (morango,banana ou coco)</p>
+  <p class="description">
+    <span class="highlight">Adicionais:</span> morango,banana ou coco</span>  
+  </p>
+  <p class="note">
+    * Escolha seu recheio favorito e aproveite o sabor irresistível!
+  </p>
   </div>
 
   <div class="menu-item">    
@@ -362,7 +404,7 @@
 </div>
 
 <div class="title-container" class="section" id="salgados">
-  <h1><span class="line">Bolinhos/kibe e outros</span></h1>
+  <h1><span class="line">outros</span></h1>
 </div>
 
   <div class="menu-item">
