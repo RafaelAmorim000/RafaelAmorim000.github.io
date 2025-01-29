@@ -6,10 +6,14 @@
   <title>Cardápio</title>
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #c18484;
-    }
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #f7c2c2, #c18484); /* Degradê suave de rosa claro para um tom mais escuro */
+    background-image: url('img/textura.jpg'); /* Adiciona uma textura sutil ao fundo */
+    background-size: cover; /* Faz a textura cobrir toda a tela */
+    background-attachment: fixed; /* A textura fica fixa enquanto rola a página */
+    color: #333;
+}
     .container {
       text-align: center;
       padding: 20px;
@@ -117,21 +121,30 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background: #333;
+    background: linear-gradient(to right, #b22222, #ff6347); /* Degradê elegante */
     color: white;
-    padding: 10px 0;
+    padding: 15px 0;
     text-align: center;
-    z-index: 1000; /* Garante que fique acima de outros elementos */
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
+
 .menu a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-        }
+    color: white;
+    text-decoration: none;
+    margin: 0 2px; /* Diminui a margem entre os links */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
 .menu a:hover {
-            text-decoration: underline;
-        }
+    background: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    transform: scale(1.1);
+}
 .section {
             padding: 100px 20px;
             margin-top: 50px;
@@ -165,7 +178,7 @@
 .note {
   font-size: 14px;
   font-style: italic;
-  color: #555;
+  color: #ffffff;
   margin-top: 5px;
 }
   </style>
@@ -525,9 +538,11 @@
 </div>
 
 <script>
+
   function toggleItem(element) {
     element.classList.toggle("expanded");
   }
 </script>
+
 </body>
 </html>
