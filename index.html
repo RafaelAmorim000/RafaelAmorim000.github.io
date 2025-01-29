@@ -113,19 +113,50 @@
   height: auto; /* Mantém a proporção correta */
   display: block; /* Remove espaços extras abaixo da imagem */
 }
-
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            padding: 100px 20px;
+            margin-top: 50px;
+        }
   </style>
 </head>
 <body>
 
+
+
+  
   <div class="container">
     <img src="img/logo.jpg" alt="Descrição da imagem" > 
   </div>
-
+  <div class="menu">
+    <a href="#fogazzas-salgadas">Fogazzas Salgadas</a>
+    <a href="#fogazzas-doces">Fogazzas Doces</a>
+    <a href="#salgados">Salgados</a>
+    <a href="#porcoes">Porções</a>
+</div>
   
-  <div class="title-container">
+  <div class="title-container" class="section" id="fogazzas-salgadas"> 
   <h1><span class="line">Fogazzas Salgadas</span></h1>
-
+  <p>Acrecimos de catupiry ou chedar acrecentasse <span class="price">R$ 3,00</span>  </p>
+  
   </div>
 
   <div class="menu-item" onclick="toggleItem(this)"> 
@@ -290,7 +321,7 @@
     </div>
 
   </div>
-  <div class="title-container">
+  <div class="title-container" class="section" id="fogazzas-doces">
   <h1><span class="line">Fogazzas Doces</span></h1>
   </div>
 
@@ -329,7 +360,7 @@
 
 </div>
 
-<div class="title-container">
+<div class="title-container" class="section" id="salgados">
   <h1><span class="line">Bolinhos/kibe e outros</span></h1>
 </div>
 
@@ -409,7 +440,7 @@
 
 </div>
 
-<div class="title-container">
+<div class="title-container" class="section" id="porcoes">
   <h1><span class="line">Porções</span></h1>
 </div>
   <div class="menu-item">
