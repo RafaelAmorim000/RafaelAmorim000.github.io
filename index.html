@@ -22,59 +22,89 @@
       color: #333;
     }
     .menu-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #fff;
-      margin: 10px 0;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-      position: relative;
-      overflow: hidden; /* Para evitar que a imagem ultrapasse o card */
-      height: 80px; /* Altura inicial do card */
-    }
-    .menu-item .details {
-      flex: 1;
-      margin-left: 10px;
-    }
-    .menu-item .details h3 {
-      margin: 0;
-      font-size: 16px;
-      color: #333;
-    }
-    .menu-item .details p {
-      margin: 5px 0 0;
-      font-size: 14px;
-      color: #777;
-    }
-    .menu-item .price {
-      font-size: 16px;
-      font-weight: bold;
-      color: #2c7a7b;
-    }
-    .menu-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: none; /* A imagem começa oculta */
-      position: absolute;
-      top: 0;
-      left: 0;
-      border-radius: 10px;
-    }
-    .menu-item.expanded {
-      height: 200px; /* Aumenta o tamanho do card quando expandido */
-    }
-    .menu-item.expanded img {
-      display: block; /* Exibe a imagem quando expandido */
-    }
-    .menu-item.expanded .details, 
-    .menu-item.expanded .price {
-      display: none; /* Esconde os detalhes e preço quando expandido */
-    }
+    display: flex;
+    align-items: center;
+    background: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    height: 100px;
+}
+
+/* Efeito de "zoom" ao passar o dedo */
+.menu-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Luz suave no fundo ao passar o mouse */
+.menu-item::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgba(255, 255, 255, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+.menu-item:hover::before {
+    opacity: 1;
+}
+
+/* Imagem visível 30% do card inicialmente */
+.menu-item img {
+    width: 100%;
+    height: 30%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Ícone animado de "expandir" */
+.menu-item::after {
+    content: "🔽";
+    font-size: 22px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    transition: transform 0.4s ease-in-out, opacity 0.4s;
+    opacity: 1;
+}
+
+/* Quando expandido */
+.menu-item.expanded {
+    height: 250px; /* Aumenta mais para chamar atenção */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagem desliza suavemente */
+.menu-item.expanded img {
+    height: 80%;
+}
+
+/* Ícone de seta animado para cima */
+.menu-item.expanded::after {
+    content: "🔼";
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Some os detalhes ao expandir */
+.menu-item.expanded .details {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s, transform 0.3s;
+}
     
  
   .title-container {
