@@ -77,6 +77,7 @@
 }
 
 /* Imagem visível 30% do card inicialmente */
+/* Efeito de brilho constante na imagem */
 .menu-item img {
     width: 100%;
     height: 30%;
@@ -86,8 +87,14 @@
     bottom: 0;
     left: 0;
     border-radius: 10px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 1), 0 0 50px rgba(255, 140, 0, 0.9); /* Brilho dourado + alaranjado */
     transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
+  /* Setinha desaparece quando expandido */
+  .menu-item.expanded::before {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-10px);
+  }
 
 /* Ícone animado de "expandir" */
 .menu-item::after {
@@ -206,10 +213,10 @@
     color: white;
     text-decoration: none;
     margin: 0 0,05px;
-    font-size: 15px; /* Fonte maior */
+    font-size: 13px;  /* Fonte maior */
     font-weight: bold;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 8px 15px;
+    border-radius: 6px;
     transition: all 0.3s ease-in-out;
     background: linear-gradient(to right, #ff0000, #ff4800); /* Degradê chamativo */
     box-shadow: 0 4px 10px rgba(255, 17, 0, 0.5); /* Sombra brilhante */
