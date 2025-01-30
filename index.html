@@ -22,19 +22,39 @@
       color: #333;
     }
     .menu-item {
-    display: flex;
-    align-items: center;
-    background: #fff;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.4s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    height: 100px;
-}
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+      overflow: hidden;
+      height: 100px;
+  }
+
+
+  .menu-item .price {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #b22222;
+      background: #ffe6e6;
+      padding: 5px 10px;
+      border-radius: 8px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-item:hover .price {
+      background: #ffcccc;
+  }
+
 
 /* Efeito de "zoom" ao passar o dedo */
 .menu-item:hover {
@@ -243,7 +263,6 @@
     <div class="details">
       <h3>Muçarela</h3>
       <p>Muçarela, tomate e orégano.</p>
-      <p>Clique para ver a imagem da Fogazza</p>
     </div>
     <span class="price">R$ 21,50</span>
     <img src="img/mucarela.jpg" alt="Muçarela">
@@ -264,7 +283,6 @@
       <div class="details">
         <h3>Calabresa</h3>
         <p>Calabresa, muçarela, tomate e orégano</p>
-        <p>Clique para ver a imagem da Fogazza</p>
       </div>
       <span class="price">R$ 21,50</span>
       <img src="img/calabresa.jpg" alt="calabresa">
@@ -282,7 +300,6 @@
       <div class="details">
         <h3>Frango</h3>
         <p>frango, muçarela, tomate e orégano.</p>
-        <p>Clique para ver a imagem da Fogazza</p>
       </div>
       <span class="price">R$ 22,50</span>
       <img src="img/frango.jpg" alt="Frango">
@@ -300,7 +317,7 @@
       <div class="details">
         <h3>Carne moida</h3>
         <p>Carne moida,muçarela, tomate e orégano.</p>
-        <p>Clique para ver a imagem da Fogazza</p>
+
       </div>
       <span class="price">R$ 22,50</span>
       <img src="img/Carnemoida.jpg" alt="Carne moida">
@@ -318,7 +335,7 @@
       <div class="details">
         <h3>Palmito</h3>
         <p>palmito, muçarela, tomate e orégano.</p>
-        <p>Clique para ver a imagem da Fogazza</p>
+
       </div>
       <span class="price">R$ 23,00</span>
       <img src="img/palmito.jpg" alt="palmito">
@@ -470,7 +487,7 @@
   <div class="menu-item" onclick="toggleItem(this)"> 
   <div class="details">
     <h3>Kibe assado</h3>
-    <p>Clique para ver a imagem da Fogazza</p>
+
   </div>
   <span class="price">R$ 18,00</span>
   <img src="img/kibe.jpg" alt="kibe assado">
