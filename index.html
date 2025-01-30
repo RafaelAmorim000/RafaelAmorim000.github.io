@@ -242,6 +242,15 @@
   color: #ffffff;
   margin-top: 5px;
 }
+
+html {
+    scroll-behavior: smooth; /* Faz a rolagem ficar suave */
+}
+
+/* Criando um espaço extra acima das seções para compensar o menu fixo */
+.section {
+    scroll-margin-top: 80px; /* Ajuste conforme necessário */
+}
   </style>
 </head>
 <body>
@@ -282,12 +291,13 @@
  
 
   
-    <div class="menu-item">   
+  <div class="menu-item" onclick="toggleItem(this)">    
       <div class="details">
         <h3>Portuguesa</h3>
         <p>presunto, ervilha, muçarela, tomate e orégano</p>
       </div>
       <span class="price">R$ 21,50</span>
+      <img src="img/portuguesa.jpg" alt="portuguesa">
     </div>
 
     <div class="menu-item" onclick="toggleItem(this)"> 
@@ -601,6 +611,30 @@
     element.classList.toggle("expanded");
   }
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const menuLinks = document.querySelectorAll(".menu a");
+  
+      menuLinks.forEach(link => {
+          link.addEventListener("click", function (event) {
+              event.preventDefault(); // Impede o comportamento padrão
+              const targetId = this.getAttribute("href").substring(1);
+              const targetElement = document.getElementById(targetId);
+              
+              if (targetElement) {
+                  const offset = 80; // Define o quanto a seção ficará acima (ajuste esse valor se necessário)
+                  const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+                  
+                  window.scrollTo({
+                      top: elementPosition,
+                      behavior: "smooth"
+                  });
+              }
+          });
+      });
+  });
+  </script>
 
 </body>
 </html>
