@@ -87,7 +87,7 @@
     bottom: 0;
     left: 0;
     border-radius: 10px;
-    box-shadow: 0 0 30px rgba(255, 215, 0, 1), 0 0 50px rgba(255, 140, 0, 0.9); /* Brilho dourado + alaranjado */
+    box-shadow: none; /* Remove o brilho */
     transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
   /* Setinha desaparece quando expandido */
@@ -98,7 +98,7 @@
 
 /* Ícone animado de "expandir" */
 .menu-item::after {
-    content: "🔽";
+    content: "🔼";
     font-size: 22px;
     position: absolute;
     right: 15px;
@@ -122,7 +122,7 @@
 
 /* Ícone de seta animado para cima */
 .menu-item.expanded::after {
-    content: "🔼";
+    content: "🔽";
     transform: translateY(-50%) rotate(180deg);
 }
 
