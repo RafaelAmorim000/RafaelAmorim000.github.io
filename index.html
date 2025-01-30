@@ -120,10 +120,24 @@
 }
 
 /* Some os detalhes ao expandir */
-.menu-item.expanded .details {
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s, transform 0.3s;
+.menu-item .details {
+    position: absolute;
+    top: 10px; /* Movido para o topo */
+    left: 15px; /* Alinhado à esquerda */
+    text-align: left;
+}
+
+.menu-item h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.menu-item p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
 }
     
  
@@ -155,17 +169,26 @@
     margin: 10px auto 0;
     border-radius: 5px;
   }
-
   .container {
-  text-align: center;
-  padding: 0; /* Remove padding para ocupar todo o espaço */
-  width: 100%;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden; /* Evita que a imagem ultrapasse os limites */
 }
 
 .container img {
-  width: 100%; /* Faz a imagem ocupar toda a largura */
-  height: auto; /* Mantém a proporção correta */
-  display: block; /* Remove espaços extras abaixo da imagem */
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0 0% 70% 0%; /* Deixa apenas a parte inferior arredondada */
+    transition: border-radius 0.5s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* Efeito ao rolar a página */
+.scroll-logo {
+    border-radius: 0 0 30% 30%; /* Reduz o efeito arredondado ao rolar */
+    transform: scale(0.95); /* Dá um efeito de leve retração */
 }
 .menu {
     position: fixed;
@@ -188,8 +211,8 @@
     padding: 12px 20px;
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
-    background: linear-gradient(to right, #ffcc00, #ff9900); /* Degradê chamativo */
-    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.5); /* Sombra brilhante */
+    background: linear-gradient(to right, #ff0000, #ff4800); /* Degradê chamativo */
+    box-shadow: 0 4px 10px rgba(255, 17, 0, 0.5); /* Sombra brilhante */
     border: 2px solid #fff;
     animation: pulse 1.5s infinite;
 }
@@ -259,7 +282,7 @@ html {
 
   
   <div class="container">
-    <img src="img/logo2.jpeg" alt="Descrição da imagem" > 
+    <img src="img/logo3.jpeg" alt="Descrição da imagem" > 
   </div>
   <div class="menu">
     <a href="#fogazzas-salgadas">Salgada</a>
@@ -637,6 +660,17 @@ html {
           });
       });
   });
+
+  window.addEventListener("scroll", function() {
+    let logo = document.querySelector(".container img");
+    if (window.scrollY > 100) {
+        logo.classList.add("scroll-logo");
+    } else {
+        logo.classList.remove("scroll-logo");
+    }
+});
+
+
   </script>
 
 </body>
