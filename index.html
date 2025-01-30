@@ -182,18 +182,29 @@
 .menu a {
     color: white;
     text-decoration: none;
-    margin: 0 2px; /* Diminui a margem entre os links */
-    font-size: 18px;
+    margin: 0 2px;
+    font-size: 15px; /* Fonte maior */
     font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 12px 20px;
+    border-radius: 8px;
     transition: all 0.3s ease-in-out;
+    background: linear-gradient(to right, #ffcc00, #ff9900); /* Degradê chamativo */
+    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.5); /* Sombra brilhante */
+    border: 2px solid #fff;
+    animation: pulse 1.5s infinite;
 }
 
 .menu a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    text-decoration: none;
-    transform: scale(1.1);
+    background: #ff6600;
+    transform: scale(1.15); /* Cresce ao passar o mouse */
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.8);
+}
+
+/* Efeito pulsante */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 .section {
             padding: 100px 20px;
