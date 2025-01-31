@@ -8,10 +8,10 @@
     body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #f7c2c2, #c18484); /* Degradê suave de rosa claro para um tom mais escuro */
-    background-image: url('img/textura.jpg'); /* Adiciona uma textura sutil ao fundo */
-    background-size: cover; /* Faz a textura cobrir toda a tela */
-    background-attachment: fixed; /* A textura fica fixa enquanto rola a página */
+    background: linear-gradient(to bottom, #f7c2c2, #c18484);
+    background-image: url('img/textura.jpg');
+    background-size: cover;
+    background-attachment: fixed;
     color: #333;
 }
     .container {
@@ -23,133 +23,69 @@
     }
     .menu-item {
     position: relative;
-    display: flex;
+    display: flex;  /* Usa flexbox para organizar a imagem e o conteúdo */
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;  /* Alinha os itens à esquerda */
     background: #fff;
     margin: 10px 0;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: all 0.4s ease-in-out;
     overflow: hidden;
     height: 100px;
 }
 
 
+.price {
+    z-index: 1; /* Garante que o preço fique por cima da imagem também */
+}
+
   .menu-item .price {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #b22222;
-      background: #ffe6e6;
-      padding: 5px 10px;
-      border-radius: 8px;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #b22222;
+    background: #ffe6e6;
+    padding: 5px 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   }
 
   .menu-item:hover .price {
       background: #ffcccc;
   }
 
-
-/* Efeito de "zoom" ao passar o dedo */
-.menu-item:hover {
-    transform: scale(1.03);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Luz suave no fundo ao passar o mouse */
-.menu-item::before {
-    content: "";
-    position: absolute;
-    width: 100%;
+  .menu-item img {
+    width: 50%;  /* Ajusta a largura da imagem para cobrir metade do card */
     height: 100%;
-    background: radial-gradient(rgba(255, 255, 255, 0.3), transparent);
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-}
-.menu-item:hover::before {
-    opacity: 1;
-}
-
-/* Imagem visível 30% do card inicialmente */
-/* Efeito de brilho constante na imagem */
-.menu-item img {
-    width: 100%;
-    height: 30%;
     object-fit: cover;
-    display: block;
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    border-radius: 10px;
-    transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    border-radius: 10px 0 70% 0%;
 }
 
-
-
-  /* Setinha desaparece quando expandido */
-  .menu-item.expanded::before {
-      opacity: 0;
-      transform: translateX(-50%) translateY(-10px);
-  }
-
-/* Ícone animado de "expandir" */
-.menu-item::after {
-    content: "🔼";
-    font-size: 22px;
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #777;
-    transition: transform 0.4s ease-in-out, opacity 0.4s;
-    opacity: 1;
-}
-
-/* Quando expandido */
-.menu-item.expanded {
-    height: 250px; /* Aumenta mais para chamar atenção */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Imagem desliza suavemente */
-.menu-item.expanded img {
-    height: 80%;
-}
-
-/* Ícone de seta animado para cima */
-.menu-item.expanded::after {
-    content: "🔽";
-    transform: translateY(-50%) rotate(180deg);
-}
-
-/* Some os detalhes ao expandir */
 .menu-item .details {
-    position: absolute;
-    top: 10px; /* Movido para o topo */
-    left: 15px; /* Alinhado à esquerda */
+  margin-left: 52%;  /* Move a descrição para a direita da imagem */
+    padding: 0px;
+    z-index: 1;  /* Garante que o texto fique acima da imagem */
     text-align: left;
 }
 
 .menu-item h3 {
-    margin: 0;
-    font-size: 18px;
+  font-size: 18px;
     font-weight: bold;
     color: #333;
 }
 
 .menu-item p {
-    margin: 5px 0 0;
-    font-size: 14px;
-    color: #666;
+  font-size: 14px;
+  color: #666;
 }
     
- 
   .title-container {
     text-align: center;
     margin: 20px 0;
@@ -159,12 +95,12 @@
   .title-container h1 {
     font-size: 24px;
     font-weight: bold;
-    color: #b22222; /* Vermelho escuro elegante */
+    color: #b22222;
     text-transform: uppercase;
     display: inline-block;
     padding: 10px 20px;
     border-radius: 10px;
-    background: linear-gradient(to right, #ff6347, #b22222); /* Degradê bonito */
+    background: linear-gradient(to right, #ff6347, #b22222);
     color: #fff;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   }
@@ -183,27 +119,21 @@
     padding: 0;
     width: 100%;
     position: relative;
-    overflow: hidden; /* Evita que a imagem ultrapasse os limites */
+    overflow: hidden;
 }
 
 .container img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 0 0% 70% 0%; /* Deixa apenas a parte inferior arredondada */
-    transition: border-radius 0.5s ease-in-out, transform 0.4s ease-in-out;
+    border-radius: 0 0% 70% 0%;
 }
 
-/* Efeito ao rolar a página */
-.scroll-logo {
-    border-radius: 0 0 30% 30%; /* Reduz o efeito arredondado ao rolar */
-    transform: scale(0.95); /* Dá um efeito de leve retração */
-}
 .menu {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(to right, #b22222, #ff6347); /* Degradê elegante */
+    background: linear-gradient(to right, #b22222, #ff6347);
     color: white;
     padding: 15px 0;
     text-align: center;
@@ -214,35 +144,24 @@
 .menu a {
     color: white;
     text-decoration: none;
-    margin: 0 0,05px;
-    font-size: 13px;  /* Fonte maior */
+    margin: 0 5px;
+    font-size: 13px;
     font-weight: bold;
     padding: 8px 15px;
     border-radius: 6px;
-    transition: all 0.3s ease-in-out;
-    background: linear-gradient(to right, #ff0000, #ff4800); /* Degradê chamativo */
-    box-shadow: 0 4px 10px rgba(255, 17, 0, 0.5); /* Sombra brilhante */
+    background: linear-gradient(to right, #ff0000, #ff4800);
+    box-shadow: 0 4px 10px rgba(255, 17, 0, 0.5);
     border: 2px solid #fff;
-    animation: pulse 1.5s infinite;
 }
 
 .menu a:hover {
     background: #ff6600;
-    transform: scale(1.15); /* Cresce ao passar o mouse */
-    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.8);
 }
 
-/* Efeito pulsante */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
 .section {
-            padding: 100px 20px;
-            margin-top: 50px;
-        }
-
+    padding: 100px 20px;
+    margin-top: 50px;
+}
 
 .description {
   font-size: 16px;
@@ -276,14 +195,13 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Faz a rolagem ficar suave */
+    scroll-behavior: smooth;
 }
 
-/* Criando um espaço extra acima das seções para compensar o menu fixo */
 .section {
-    scroll-margin-top: 80px; /* Ajuste conforme necessário */
+    scroll-margin-top: 80px;
 }
-  </style>
+</style>
 </head>
 <body>
 
