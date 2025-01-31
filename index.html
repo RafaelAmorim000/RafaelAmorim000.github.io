@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cardápio</title>
   <style>
-    body {
+body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #f7c2c2, #c18484);
@@ -14,34 +14,35 @@
     background-attachment: fixed;
     color: #333;
 }
-    .container {
-      text-align: center;
-      padding: 20px;
-    }
-    h1 {
-      color: #333;
-    }
-    .menu-item {
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.menu-item {
     position: relative;
-    display: flex;  /* Usa flexbox para organizar a imagem e o conteúdo */
+    display: flex;
     align-items: center;
-    justify-content: flex-start;  /* Alinha os itens à esquerda */
+    justify-content: flex-start;
     background: #fff;
     margin: 10px 0;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     overflow: hidden;
     height: 100px;
 }
 
-
 .price {
-    z-index: 1; /* Garante que o preço fique por cima da imagem também */
+    z-index: 1;
 }
 
-  .menu-item .price {
+.menu-item .price {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -51,15 +52,10 @@
     background: #ffe6e6;
     padding: 5px 10px;
     border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  }
+}
 
-  .menu-item:hover .price {
-      background: #ffcccc;
-  }
-
-  .menu-item img {
-    width: 50%;  /* Ajusta a largura da imagem para cobrir metade do card */
+.menu-item img {
+    width: 50%;
     height: 100%;
     object-fit: cover;
     position: absolute;
@@ -69,30 +65,30 @@
 }
 
 .menu-item .details {
-  margin-left: 52%;  /* Move a descrição para a direita da imagem */
+    margin-left: 52%;
     padding: 0px;
-    z-index: 1;  /* Garante que o texto fique acima da imagem */
+    z-index: 1;
     text-align: left;
 }
 
 .menu-item h3 {
-  font-size: 18px;
+    font-size: 18px;
     font-weight: bold;
     color: #333;
 }
 
 .menu-item p {
-  font-size: 14px;
-  color: #666;
+    font-size: 14px;
+    color: #666;
 }
-    
-  .title-container {
+
+.title-container {
     text-align: center;
     margin: 20px 0;
     position: relative;
-  }
+}
 
-  .title-container h1 {
+.title-container h1 {
     font-size: 24px;
     font-weight: bold;
     color: #b22222;
@@ -102,10 +98,9 @@
     border-radius: 10px;
     background: linear-gradient(to right, #ff6347, #b22222);
     color: #fff;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  }
+}
 
-  .title-container::after {
+.title-container::after {
     content: "";
     display: block;
     width: 60%;
@@ -113,8 +108,9 @@
     background: #b22222;
     margin: 10px auto 0;
     border-radius: 5px;
-  }
-  .container {
+}
+
+.container {
     text-align: center;
     padding: 0;
     width: 100%;
@@ -138,7 +134,6 @@
     padding: 15px 0;
     text-align: center;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .menu a {
@@ -150,7 +145,6 @@
     padding: 8px 15px;
     border-radius: 6px;
     background: linear-gradient(to right, #ff0000, #ff4800);
-    box-shadow: 0 4px 10px rgba(255, 17, 0, 0.5);
     border: 2px solid #fff;
 }
 
@@ -164,34 +158,33 @@
 }
 
 .description {
-  font-size: 16px;
-  color: #333;
-  background: #ffe6e6;
-  padding: 10px;
-  border-radius: 8px;
-  display: inline-block;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #333;
+    background: #ffe6e6;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
 }
 
 .highlight {
-  font-weight: bold;
-  color: #b22222;
+    font-weight: bold;
+    color: #b22222;
 }
 
 .price {
-  font-weight: bold;
-  color: #2c7a7b;
-  background: #fff;
-  padding: 3px 8px;
-  border-radius: 5px;
-  margin-left: 5px;
+    font-weight: bold;
+    color: #2c7a7b;
+    background: #fff;
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin-left: 5px;
 }
 
 .note {
-  font-size: 14px;
-  font-style: italic;
-  color: #ffffff;
-  margin-top: 5px;
+    font-size: 14px;
+    font-style: italic;
+    color: #ffffff;
+    margin-top: 5px;
 }
 
 html {
@@ -229,7 +222,7 @@ html {
   </p>
   </div>
 
-  <div class="menu-item" onclick="toggleItem(this)"> 
+  <div class="menu-item" > 
     <div class="details">
       <h3>Muçarela</h3>
       <p>Muçarela, tomate e orégano.</p>
@@ -241,7 +234,7 @@ html {
  
 
   
-  <div class="menu-item" onclick="toggleItem(this)">    
+  <div class="menu-item" >    
       <div class="details">
         <h3>Portuguesa</h3>
         <p>presunto, ervilha, muçarela, tomate e orégano</p>
@@ -250,7 +243,7 @@ html {
       <img src="img/portuguesa.jpg" alt="portuguesa">
     </div>
 
-    <div class="menu-item" onclick="toggleItem(this)"> 
+    <div class="menu-item" > 
       <div class="details">
         <h3>Calabresa</h3>
         <p>Calabresa, muçarela, tomate e orégano</p>
@@ -267,7 +260,7 @@ html {
       <span class="price">R$ 21,50</span>
     </div>
 
-    <div class="menu-item" onclick="toggleItem(this)"> 
+    <div class="menu-item" > 
       <div class="details">
         <h3>Frango</h3>
         <p>frango, muçarela, tomate e orégano.</p>
@@ -284,7 +277,7 @@ html {
       <span class="price">R$ 21,50</span>
     </div>
 
-    <div class="menu-item" onclick="toggleItem(this)"> 
+    <div class="menu-item"> 
       <div class="details">
         <h3>Carne moida</h3>
         <p>Carne moida,muçarela, tomate e orégano.</p>
@@ -302,7 +295,7 @@ html {
       <span class="price">R$ 32,50</span>
     </div>
 
-    <div class="menu-item" onclick="toggleItem(this)"> 
+    <div class="menu-item" > 
       <div class="details">
         <h3>Palmito</h3>
         <p>palmito, muçarela, tomate e orégano.</p>
@@ -354,7 +347,7 @@ html {
       <span class="price">R$ 28,00</span>
     </div>
 
-    <div class="menu-item" onclick="toggleItem(this)">  
+    <div class="menu-item" >  
       <div class="details">
         <h3>Camarão</h3>
         <p>Camarão, muçarela, tomate e orégano</p>
@@ -400,7 +393,7 @@ html {
   </p>
   </div>
 
-  <div class="menu-item" onclick="toggleItem(this)"> 
+  <div class="menu-item" > 
     <div class="details">
       <h3>Chocolate</h3>
       <p>Chocolate meio amargo com Chocolate ao leite.</p>
@@ -409,7 +402,7 @@ html {
     <img src="img/chocolate.jpg" alt="chocolate">
   </div>
 
-  <div class="menu-item" onclick="toggleItem(this)"> 
+  <div class="menu-item" > 
     <div class="details">
       <h3>Nutella</h3>
       <p></p>
@@ -449,7 +442,7 @@ html {
     <span class="price">R$ 25,00</span>
   </div>
 
-  <div class="menu-item" onclick="toggleItem(this)">    
+  <div class="menu-item" >    
     <div class="details">
       <h3>Kibe</h3>
       <p>Kibe muçarela ou catupiry</p>
@@ -458,7 +451,7 @@ html {
     <img src="img/kibefrito.jpg" alt="kibe frito">
   </div>
 
-  <div class="menu-item" onclick="toggleItem(this)"> 
+  <div class="menu-item" > 
   <div class="details">
     <h3>Kibe assado</h3>
 
@@ -467,7 +460,7 @@ html {
   <img src="img/kibe.jpg" alt="kibe assado">
 </div>
 
-<div class="menu-item" onclick="toggleItem(this)"> 
+<div class="menu-item" > 
 <div class="details">
   <h3>Bolinho de queijo
   </h3>
@@ -559,12 +552,7 @@ html {
   </div>
 </div>
 
-<script>
 
-  function toggleItem(element) {
-    element.classList.toggle("expanded");
-  }
-</script>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
